@@ -1,7 +1,7 @@
 {
-  "name": "react-async-script-loader",
+  "name": "react-async-script-dyn-loader",
   "version": "0.2.3",
-  "description": "A decorator for script lazy loading on react component",
+  "description": "A decorator for script lazy loading on react component with script url calculation through function",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leozdgao/react-script-loader.git"
+    "url": "git+https://github.com/rbenhadd/react-async-script-loader.git"
   },
   "keywords": [
     "react",
@@ -20,9 +20,9 @@
   "author": "leozdgao",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/leozdgao/react-script-loader/issues"
+    "url": "https://github.com/rbenhadd/react-async-script-loader/issues"
   },
-  "homepage": "https://github.com/leozdgao/react-script-loader#readme",
+  "homepage": "https://github.com/rbenhadd/react-async-script-loader#readme",
   "peerDependencies": {
     "react": "^15.0.1 || ^16.0.0"
   },

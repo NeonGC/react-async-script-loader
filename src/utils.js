@@ -12,6 +12,8 @@ export const newScript = (src) => (cb) => {
       }
     }
     src = src.src;
+  } else if (typeof src === 'function') {
+    scriptElem.src = src()
   } else {
     scriptElem.src = src
   }
