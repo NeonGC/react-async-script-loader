@@ -10,7 +10,7 @@ let failedScript = []
 export function startLoadingScripts(scripts, onComplete = noop) {
   // sequence load
   const loadNewScript = (script) => {
-    const src = typeof script === 'object' ? script.src : script
+    const src = getScript(script)
     if (loadedScript.indexOf(src) < 0) {
       return taskComplete => {
         const callbacks = pendingScripts[src] || []
@@ -25,6 +25,17 @@ export function startLoadingScripts(scripts, onComplete = noop) {
       }
     }
   }
+  
+  // Retrieve script value depending of its type
+  const getScript = (script) => {
+    if (typeof script === 'object') {
+      return script.src
+    } else if (typeof script === 'function') {
+      return script();
+    }
+    return script
+  }
+  
   const tasks = scripts.map(src => {
     if (Array.isArray(src)) {
       return src.map(loadNewScript)
